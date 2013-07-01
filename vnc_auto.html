@@ -115,6 +115,7 @@
 
             $D('sendCtrlAltDelButton').style.display = "inline";
             $D('sendCtrlAltDelButton').onclick = sendCtrlAltDel;
+            // $D('noVNC_status_bar').style.display = 'none';
 
             WebUtil.init_logging(WebUtil.getQueryVar('logging', 'warn'));
             document.title = unescape(WebUtil.getQueryVar('title', 'noVNC'));
@@ -160,6 +161,8 @@
                            'updateState':  updateState,
                            'onPasswordRequired':  passwordRequired});
             rfb.connect(host, port, password, path);
+
+            alert(host + ':' + port + '/' + password);
         };
         </script>
 
